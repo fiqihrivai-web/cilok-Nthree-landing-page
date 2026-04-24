@@ -3,7 +3,10 @@ import { motion } from "framer-motion";
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center bg-[#fdfdfd] overflow-hidden pt-20">
+    <section
+      id="home"
+      className="relative min-h-screen flex flex-col items-center justify-center bg-[#fdfdfd] overflow-hidden pt-20"
+    >
       {/* 🔥 BACKGROUND GRADIENT GLOW */}
       <div className="absolute inset-0 z-0">
         <div className="absolute w-72 h-72 bg-red-500/30 blur-[120px] top-10 left-10"></div>
