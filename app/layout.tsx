@@ -11,7 +11,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-black text-white antialiased">
+      <body className="bg-black text-white antialiased relative z-0">
         <CartProvider>
           <Navbar />
           {children}
