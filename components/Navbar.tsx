@@ -41,12 +41,12 @@ export default function Navbar() {
     }
   }, [pathname]);
 
-  // ✅ AUTO CLOSE CART SAAT PINDAH HALAMAN
+  // AUTO CLOSE CART
   useEffect(() => {
     setIsCartOpen(false);
   }, [pathname]);
 
-  // ✅ SCROLL SPY (ONLY HOMEPAGE)
+  // SCROLL SPY
   useEffect(() => {
     if (pathname !== "/") return;
 
@@ -118,6 +118,11 @@ export default function Navbar() {
               key={link.name}
               href={link.href}
               onClick={(e) => {
+                if (pathname !== "/") {
+                  // 🚀 kalau bukan di homepage → langsung pindah page
+                  return;
+                }
+
                 e.preventDefault();
 
                 setActive(link.id);
