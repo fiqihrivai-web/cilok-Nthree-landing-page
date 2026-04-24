@@ -118,12 +118,15 @@ export default function Navbar() {
               key={link.name}
               href={link.href}
               onClick={(e) => {
-                if (pathname !== "/") {
-                  // 🚀 kalau bukan di homepage → langsung pindah page
+                const isHomePage = pathname === "/";
+
+                if (!isHomePage) {
+                  // 👉 kalau bukan di homepage → biarin Next.js handle navigation
+                  setIsCartOpen(false);
                   return;
                 }
 
-                e.preventDefault();
+                e.preventDefault(); // hanya di homepage
 
                 setActive(link.id);
                 setIsCartOpen(false);
@@ -141,6 +144,9 @@ export default function Navbar() {
                     top: y,
                     behavior: "smooth",
                   });
+                } else {
+                  // 🔥 fallback kalau element ga ketemu
+                  window.location.href = link.href;
                 }
               }}
               className="relative"
