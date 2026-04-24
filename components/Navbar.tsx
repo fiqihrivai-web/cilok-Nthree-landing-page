@@ -84,7 +84,7 @@ export default function Navbar() {
   return (
     <nav
       id="navbar"
-      className={`fixed top-0 left-0 w-full z-20 transition-all duration-300 px-4 md:px-10 ${
+      className={`fixed top-0 left-0 w-full z-[60] transition-all duration-300 px-4 md:px-10 ${
         scrolled
           ? "py-4 bg-black/80 backdrop-blur-xl border-b border-white/10 shadow-lg"
           : "py-4 bg-black/40 backdrop-blur-xl border-b border-white/5"
@@ -139,7 +139,7 @@ export default function Navbar() {
                 className={`text-[10px] font-bold uppercase tracking-[0.5em] transition ${
                   active === link.id
                     ? "text-red-600"
-                    : "text-black hover:text-white"
+                    : "text-zinc-300 hover:text-white"
                 }`}
               >
                 {link.name}
@@ -215,7 +215,7 @@ export default function Navbar() {
               animate={{ opacity: 0.6 }}
               exit={{ opacity: 0 }}
               onClick={() => setIsCartOpen(false)}
-              className="fixed inset-0 bg-black z-40"
+              className="fixed inset-0 bg-black/60 z-40"
             />
 
             {/* 🔥 CART PANEL */}
