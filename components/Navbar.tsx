@@ -72,7 +72,7 @@ export default function Navbar() {
 
     const checkTime = () => {
       const hour = new Date().getHours();
-      setIsOpen(hour >= 10 && hour < 22);
+      setIsOpen(hour >= 7.45 && hour < 22);
     };
 
     checkTime();
