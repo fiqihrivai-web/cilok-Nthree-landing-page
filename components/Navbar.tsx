@@ -14,6 +14,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(true);
   const [scrolled, setScrolled] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [mobileMenu, setMobileMenu] = useState(false);
 
   const { cart, increaseQty, decreaseQty, removeFromCart } = useCart();
 
@@ -86,13 +87,28 @@ export default function Navbar() {
     return () => clearInterval(interval);
   }, [cart]);
 
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+
+    const handleScroll = () => {
+      if (Math.abs(window.scrollY - lastScrollY) > 20) {
+        setMobileMenu(false);
+      }
+      lastScrollY = window.scrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <nav
       id="navbar"
       className={`fixed top-0 left-0 w-full z-[9999] pointer-events-auto transition-all duration-300 px-4 md:px-10 ${
         scrolled
-          ? "py-4 bg-black/80 backdrop-blur-xl border-b border-white/10 shadow-lg"
-          : "py-4 bg-black/40 backdrop-blur-xl border-b border-white/5"
+          ? "py-3 md:py-4 bg-black/80 backdrop-blur-xl border-b border-white/10 shadow-lg"
+          : "py-3 md:py-4 bg-black/40 backdrop-blur-xl border-b border-white/5"
       }`}
     >
       <div className="max-w-6xl mx-auto flex justify-between items-center">
@@ -178,6 +194,13 @@ export default function Navbar() {
 
         {/* RIGHT */}
         <div className="flex items-center gap-6">
+          {/* HAMBURGER (HP ONLY) */}
+          <button
+            onClick={() => setMobileMenu(!mobileMenu)}
+            className="lg:hidden text-white text-2xl"
+          >
+            ☰
+          </button>
           {/* STATUS */}
           <div className="hidden sm:flex items-center gap-2 px-3 py-1.5 border border-white/10 rounded-full bg-zinc-900/50">
             <span className="relative flex h-1.5 w-1.5">
@@ -203,7 +226,7 @@ export default function Navbar() {
           </div>
 
           {/* ICON */}
-          <div className="flex items-center gap-5 text-black">
+          <div className="flex items-center gap-4 md:gap-5 text-white">
             <button onClick={() => setIsSearchOpen(true)}>
               <Search size={18} />
             </button>
@@ -220,6 +243,36 @@ export default function Navbar() {
           </div>
         </div>
       </div>
+
+      {/* MOBILE MENU */}
+      <AnimatePresence>
+        {mobileMenu && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="lg:hidden absolute top-full left-0 w-full 
+      bg-black/90 backdrop-blur-xl border-b border-white/10 
+      flex flex-col items-center gap-6 py-6 z-40"
+          >
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                onClick={() => {
+                  setMobileMenu(false);
+                  setActive(link.id);
+                }}
+                className={`text-sm font-bold uppercase tracking-widest ${
+                  active === link.id ? "text-red-500" : "text-white"
+                }`}
+              >
+                {link.name}
+              </Link>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* CART */}
       <AnimatePresence>
