@@ -5,10 +5,12 @@ import MenuSection from "@/components/MenuSection";
 import AboutSection from "@/components/AboutSection";
 import LocationSection from "@/components/LocationSection";
 import ContactSection from "@/components/ContactSection";
+import ScrollHandler from "@/components/ScrollHandler";
 
 export default function Home() {
   return (
     <main>
+      <ScrollHandler />
       {/* Semua section ditaruh di sini biar user bisa scroll dari atas sampe bawah */}
       <section id="Home">
         <HeroSection />
