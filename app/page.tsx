@@ -10,19 +10,19 @@ export default function Home() {
   return (
     <main>
       {/* Semua section ditaruh di sini biar user bisa scroll dari atas sampe bawah */}
-      <section id="home">
+      <section id="Home">
         <HeroSection />
       </section>
-      <section id="menu">
+      <section id="Menu">
         <MenuSection />
       </section>
-      <section id="about">
+      <section id="About">
         <AboutSection />
       </section>
-      <section id="location">
+      <section id="Location">
         <LocationSection />
       </section>
-      <section id="contact">
+      <section id="Contact">
         <ContactSection />
       </section>
     </main>
