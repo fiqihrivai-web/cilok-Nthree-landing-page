@@ -5,7 +5,7 @@ export default function HeroSection() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex flex-col items-center justify-center bg-[#fdfdfd] overflow-hidden pt-20"
+      className="relative min-h-screen flex flex-col items-center justify-center bg-[#fdfdfd] overflow-hidden pt-24 px-4 md:px-8"
     >
       {/* 🔥 BACKGROUND GRADIENT GLOW */}
       <div className="absolute inset-0 z-0">
@@ -59,7 +59,7 @@ export default function HeroSection() {
               show: { opacity: 1, y: 0, filter: "blur(0px)" },
             }}
             transition={{ duration: 0.6 }}
-            className="text-6xl md:text-[9rem] font-black italic leading-none uppercase tracking-tighter text-zinc-900"
+            className="text-4xl sm:text-5xl md:text-[7rem] lg:text-[9rem] font-black italic leading-none uppercase tracking-tighter text-zinc-900"
           >
             CILOK
           </motion.h1>
@@ -71,7 +71,7 @@ export default function HeroSection() {
               show: { opacity: 1, y: 0, filter: "blur(0px)" },
             }}
             transition={{ duration: 0.6 }}
-            className="text-6xl md:text-[9rem] font-black italic leading-none uppercase tracking-tighter text-red-600"
+            className="text-4xl sm:text-5xl md:text-[7rem] lg:text-[9rem] font-black italic leading-none uppercase tracking-tighter text-red-600"
           >
             N-THREE
           </motion.h1>
@@ -83,7 +83,7 @@ export default function HeroSection() {
               show: { opacity: 1, y: 0, filter: "blur(0px)" },
             }}
             transition={{ duration: 0.5 }}
-            className="mt-10 text-x2 md:text-5xl tracking-[0.3em] text-red-500"
+            className="mt-6 md:mt-10 text-lg sm:text-2xl md:text-4xl tracking-[0.3em] text-red-500"
           >
             𝓗𝓸𝓶𝓮 𝓜𝓪𝓭𝓮
           </motion.div>
@@ -92,7 +92,7 @@ export default function HeroSection() {
         <motion.div
           animate={{ y: [0, -15, 0], rotate: [0, 10, -10, 0] }}
           transition={{ duration: 5, repeat: Infinity }}
-          className="absolute -left-10 text-5xl hidden md:block"
+          className="absolute -left-6 md:-left-10 text-4xl md:text-5xl hidden md:block"
         >
           🧂
         </motion.div>
@@ -100,7 +100,7 @@ export default function HeroSection() {
         <motion.div
           animate={{ y: [0, -20, 0], rotate: [0, 15, -15, 0] }}
           transition={{ duration: 6, repeat: Infinity }}
-          className="absolute -bottom-30 -right-60 text-6xl hidden md:block"
+          className="absolute -bottom-10 md:-bottom-20 -right-10 md:-right-40 text-5xl md:text-6xl hidden md:block"
         >
           🥢🍜
         </motion.div>
@@ -108,7 +108,7 @@ export default function HeroSection() {
         <motion.div
           animate={{ y: [0, -25, 0], rotate: [0, -10, 10, 0] }}
           transition={{ duration: 7, repeat: Infinity }}
-          className="absolute top-10 right-0 text-4xl hidden md:block"
+          className="absolute top-10 right-2 md:right-0 text-3xl md:text-4xl hidden md:block"
         >
           🌶️
         </motion.div>
@@ -122,7 +122,7 @@ export default function HeroSection() {
         className="relative mt-12 z-20 px-6"
       >
         <div className="relative">
-          <div className="w-72 h-72 md:w-[480px] md:h-[480px] rounded-full border-[12px] border-white overflow-hidden shadow-2xl">
+          <div className="w-56 h-56 sm:w-64 sm:h-64 md:w-[400px] md:h-[400px] lg:w-[480px] lg:h-[480px] rounded-full border-[8px] md:border-[12px] border-white overflow-hidden shadow-2xl">
             <img
               src="/cilok-hero.png"
               alt="Cilok N-Three"
@@ -136,14 +136,14 @@ export default function HeroSection() {
       <img
         src="/leaf.png"
         alt="decoration"
-        className="absolute bottom-0 left-0 w-40 md:w-48 opacity-80 pointer-events-none"
+        className="absolute bottom-0 left-0 w-28 sm:w-36 md:w-48 opacity-80 pointer-events-none"
       />
 
       {/* 🔥 img pojok kanan bawah */}
       <img
         src="/chili.png"
         alt="decoration"
-        className="absolute -bottom-2 -right-2 w-48 md:w-50 opacity-80 pointer-events-none"
+        className="absolute -bottom-2 -right-2 w-32 sm:w-40 md:w-48 opacity-80 pointer-events-none"
       />
     </section>
   );
