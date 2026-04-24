@@ -65,7 +65,7 @@ Catatan: ${note || "-"}%0A
   };
 
   return (
-    <div className="relative z-0 min-h-screen bg-white text-white  px-6 md:px-20 pt-32 pb-24">
+    <div className="min-h-screen bg-white text-white px-6 md:px-20 py-24 relative z-0 pointer-events-auto">
       <h1 className="text-black text-3xl font-black mb-10">Checkout 🧾</h1>
 
       <div className="grid md:grid-cols-2 gap-10">
