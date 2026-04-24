@@ -41,6 +41,11 @@ export default function Navbar() {
     }
   }, [pathname]);
 
+  // ✅ AUTO CLOSE CART SAAT PINDAH HALAMAN
+  useEffect(() => {
+    setIsCartOpen(false);
+  }, [pathname]);
+
   // ✅ SCROLL SPY (ONLY HOMEPAGE)
   useEffect(() => {
     if (pathname !== "/") return;
@@ -84,7 +89,7 @@ export default function Navbar() {
   return (
     <nav
       id="navbar"
-      className={`fixed top-0 left-0 w-full z-[60] transition-all duration-300 px-4 md:px-10 ${
+      className={`fixed top-0 left-0 w-full z-[9999] pointer-events-auto transition-all duration-300 px-4 md:px-10 ${
         scrolled
           ? "py-4 bg-black/80 backdrop-blur-xl border-b border-white/10 shadow-lg"
           : "py-4 bg-black/40 backdrop-blur-xl border-b border-white/5"
@@ -223,6 +228,7 @@ export default function Navbar() {
               initial={{ x: 400, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               exit={{ x: 400, opacity: 0 }}
+              onClick={(e) => e.stopPropagation()}
               transition={{ type: "spring", stiffness: 260, damping: 25 }}
               className="fixed top-16 right-0 w-[340px] h-[calc(100vh-80px)] 
         bg-zinc-900 backdrop-blur-2xl 
