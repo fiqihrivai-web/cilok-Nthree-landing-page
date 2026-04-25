@@ -1,4 +1,3 @@
-// app/layout.tsx
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { CartProvider } from "@/Context/CartContext";
@@ -13,12 +12,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${inter.className} bg-zinc-50 text-zinc-900`}>
         <CartProvider>
-          <Navbar />
-          {children}
-          <Footer />
+          <div className="min-h-screen flex flex-col">
+            <Navbar />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </div>
         </CartProvider>
       </body>
     </html>
