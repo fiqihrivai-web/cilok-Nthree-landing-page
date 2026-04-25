@@ -3,6 +3,9 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { CartProvider } from "@/Context/CartContext";
 import "./globals.css";
+import { Inter } from "next/font/google";
+
+const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({
   children,
@@ -11,7 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-black text-white antialiased relative z-0">
+      <body className={inter.className}>
         <CartProvider>
           <Navbar />
           {children}
