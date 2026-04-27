@@ -102,7 +102,7 @@ export default function MenuSection() {
                   onClick={() => addToCart({ ...item, qty: 1 })}
                   className="text bg-red-700 w-full py-4 border border-white/10 text-[10px] font-black uppercase tracking-[0.3em] hover:bg-gray-800 hover:text-black transition-all duration-300"
                 >
-                  ADD TO CART
+                  KLIK UNTUK ORDER
                 </button>
               </div>
 
