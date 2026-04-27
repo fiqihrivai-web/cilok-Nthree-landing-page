@@ -39,7 +39,7 @@ export default function LocationSection() {
                 <div>
                   <h4 className="font-bold text-lg text-black">Alamat Utama</h4>
                   <p className="text-gray-600">
-                    Perumahan Arwinda Asri Blok L1,
+                    Perumahan Hukoci Blok R1 no 09,
                     <br />
                     Cianjur, Jawa Barat
                   </p>
@@ -65,7 +65,7 @@ export default function LocationSection() {
               {/* BUTTON */}
               <div className="pt-6">
                 <a
-                  href="https://www.google.com/maps/dir/?api=1&destination=Perumahan+Arwinda+Asri+Cianjur"
+                  href="https://maps.app.goo.gl/PoXf7KJyu9fP4ZMF9"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="
