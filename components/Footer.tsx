@@ -39,7 +39,7 @@ export default function Footer() {
               {/* Instagram */}
               <motion.div whileHover={{ y: -6, scale: 1.15 }}>
                 <Link
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/cilok_nthree?igsh=aGM4eDgwczNoc2I0"
                   target="_blank"
                   className="group relative w-12 h-12 flex items-center justify-center rounded-full bg-zinc-900 text-zinc-400 transition-all duration-300"
                 >
