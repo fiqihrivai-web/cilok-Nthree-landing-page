@@ -126,8 +126,7 @@ export default function HeroSection() {
             <img
               src="/cilok-hero.png"
               alt="Cilok N-Three"
-              className="w-full h-full object-cover"
-              style={{ WebkitTransform: "translateZ(0)" }}
+              className="w-full h-full object-cover hover:scale-105 transition duration-500"
             />
           </div>
         </div>
