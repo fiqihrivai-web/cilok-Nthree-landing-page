@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import { Search, ShoppingBag, X, Trash2 } from "lucide-react";
+import { Search, ShoppingCart, X, Trash2 } from "lucide-react";
 import { useCart } from "@/Context/CartContext";
 import { formatRupiah } from "@/utils/format";
 import { useRouter, usePathname } from "next/navigation";
@@ -232,7 +232,7 @@ export default function Navbar() {
             </button>
 
             <button onClick={() => setIsCartOpen(true)} className="relative">
-              <ShoppingBag size={18} />
+              <ShoppingCart size={18} />
 
               {cartCount > 0 && (
                 <span className="absolute -top-1 -right-1 w-4 h-4 bg-red-600 rounded-full text-[8px] flex items-center justify-center text-white font-bold">
