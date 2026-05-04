@@ -141,7 +141,7 @@ export default function HeroSection() {
 
       {/* 🔥 img pojok kanan bawah */}
       <img
-        src="/chili.png"
+        src="/asset/chili.png"
         alt="decoration"
         className="absolute -bottom-2 -right-2 w-32 sm:w-40 md:w-48 opacity-80 pointer-events-none"
       />
